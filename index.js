@@ -1,12 +1,12 @@
-const express= require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3001; // Fallback for local dev
 app.get('/', (req, res) => {
-    res.send('Dockerise image deployed on heroku');
+res.send('Dockerised image deployed on Render');
 });
 app.get('/hello', (req, res) => {
-    res.send('Hello fromDockerise image deployed on heroku');
+res.send('Hello from Dockerised image deployed on Render');
 });
-app.listen(3001, ()=>{
-    console.log("Backend server running on port 3001")
-    
-})
+app.listen(PORT, () => {
+console.log(`Backend server running on port ${PORT}`);
+});
